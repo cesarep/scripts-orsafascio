@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         Título Informativo Composições
+// @name         Título Informativo Insumos e Composições
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Modifica o título da aba do navegador para um mais informativo
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/*/composicoes/*
+// @match        https://app.orcafascio.com/*/insumos/*
 // @icon         https://app.orcafascio.com/img/logo4.png
 // @grant        none
 // ==/UserScript==
