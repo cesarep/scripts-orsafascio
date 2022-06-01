@@ -10,6 +10,10 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Instalação do Script](imgs/instalacao-script.png)
 
+1. Periodicamente o Tampermonkey verifica por atualizações dos scripts
+
+    ![Atualização do script](imgs/atualizar-script.png)
+
 ## Scripts disponíveis
 
 - [Alteração de BDI em massa](https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js)
