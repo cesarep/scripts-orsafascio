@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Título Informativo Insumos e Composições
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-comps-ins.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-comps-ins.user.js
 // @version      0.2
 // @description  Modifica o título da aba do navegador para um mais informativo
 // @author       César E. Petersen

@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Renumeração Automatica
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
 // @version      0.1
 // @description  Renumera automaticamente os itens
 // @author       César E. Petersen

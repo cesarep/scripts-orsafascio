@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Selecionar todos os bancos
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-todos-bancos.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-todos-bancos.user.js
 // @version      0.1
 // @description  Cria uma opção para selecionar todos os bancos na exportaçao do relatório de composições
 // @author       César E Petersen

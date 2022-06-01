@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Mover pastas
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/mover-pastas.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/mover-pastas.user.js
 // @version      0.3
 // @description  Move pastas inteiras
 // @author       César E. Petersen

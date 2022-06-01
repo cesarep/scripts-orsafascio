@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Alterar BDI em massa
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
 // @version      0.4
 // @description  Permite modificação em massa dos BDIs no orçamento
 // @author       César E. Petersen

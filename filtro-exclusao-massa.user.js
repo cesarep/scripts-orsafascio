@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Filtro Exclusão em massa
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-exclusao-massa.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-exclusao-massa.user.js
 // @version      0.2
 // @description  Adiciona filtros para código e descrição na exclusão em massa
 // @author       César E. Petersen

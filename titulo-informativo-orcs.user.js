@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Título Informativo
-// @namespace    http://tampermonkey.net/
+// @namespace    https://app.orcafascio.com/
+// @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-orcs.user.js
+// @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-orcs.user.js
 // @version      0.1
 // @description  Modifica o título da aba do navegador para um mais informativo
 // @author       César E. Petersen
