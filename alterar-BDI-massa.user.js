@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
-// @version      0.4
+// @version      0.5
 // @description  Permite modificação em massa dos BDIs no orçamento
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -11,6 +11,14 @@
 // @run-at document-end
 // @grant        none
 // ==/UserScript==
+
+/**
+ * Mudanças:
+ * v0.5
+ *  - Barra com botões de cancelar e salvar fixa na tela
+ *  - Campos para alterar BDIs diferenciados de uma vez
+ *  - Reorganização das funções no código
+ */
 
 (function() {
     'use strict';
@@ -37,40 +45,14 @@
     // cria a linha no final com os botoes
     var btn_td = document.createElement("tr")
     btn_td.className = "mudaBDI"
-    btn_td.appendChild(document.createElement("td"))
+    btn_td.appendChild(document.createElement("th"))
     btn_td.children[0].colSpan=30
     btn_td.children[0].className = "right"
     btn_td.children[0].appendChild(btn_c)
     btn_td.children[0].appendChild(document.createTextNode( '\u00A0' ))
     btn_td.children[0].appendChild(btn_s)
-
-
-    // funcoes de auxilio copiadas
-    var AtivarBarraDeAcaoDeUmItem = function() {
-        window.jQuery('.tr_item').mouseover(function() {
-            window.jQuery(this).find('.orc_barra_de_acao').fadeIn(0);
-        });
-        window.jQuery('.tr_item').mouseout(function() {
-            window.jQuery(this).find('.orc_barra_de_acao').fadeOut(0);
-        });
-    };
-
-    var DesativarBarraDeAcao = function() {
-        window.jQuery('.orc_barra_de_acao').each(function() {
-            window.jQuery(this).fadeOut(0);
-        });
-        window.jQuery('.tr_item').mouseover(function() {
-            window.jQuery(this).find('.orc_barra_de_acao').fadeOut(0);
-        });
-    };
-
-    var BdiDifirenciado = function(item) {
-        if (item.bdi_porcentagem || item.bdi_porcentagem === 0) {
-            return "<br>(BDI - " + (window.converteFloatMoeda(item.bdi_porcentagem)) + "%)";
-        } else {
-            return "";
-        }
-    };
+    btn_td.style.position = 'sticky'
+    btn_td.style.bottom = '0'
 
     // ativar modificação do BDI
     btn.onclick = function() {
@@ -113,23 +95,29 @@
             (node) => {node.setAttribute('value', node.parentElement.parentElement.getAttribute('bdi_porcentagem'))}
         )
 
+        // Coleta todos os BDIs pre-existente
+        let bdis = new Set([...document.querySelectorAll(".muda-bdi-item[value]")].map(x => x.value));
+        console.log(bdis)
+
+        // cria campos para esses BDIs
+        document.querySelector(".maincontentinner .row-fluid .span6").insertAdjacentHTML('beforeEnd', "<div id='classesBDIs'><p>BDIs diferenciados:</p></div>")
+
+        bdis.forEach(bdi => {
+            let bdi_input = document.createElement('input')
+            bdi_input.className = ''
+            bdi_input.value = bdi
+
+            // modifica todos os itens com esse BDI
+            bdi_input.oninput = function() {
+                window.jQuery(`#table_orc_itens tbody tr[bdi_porcentagem='${bdi}'] input`).val(bdi_input.value)
+            }
+
+            // adiciona o input na tela
+            document.getElementById('classesBDIs').append(bdi_input)
+        })
+
         /* adiciona botões para salvar ou cancelar */
         document.querySelector("#table_orc_itens tbody").append(btn_td)
-    }
-
-    /* cancela a inserção do BDI */
-    var fechaBDI = function() {
-        // deleta todas as colunas referentes ao BDI
-        document.querySelectorAll("#table_orc_itens .mudaBDI").forEach((node) => node.remove())
-
-        // reabilita o botão
-        btn.disabled = false
-
-        // rehabilita a barra de ações
-        AtivarBarraDeAcaoDeUmItem()
-
-        // apaga a linha de botões
-        document.querySelector("#table_orc_itens tr.mudaBDI").remove()
     }
 
     btn_c.onclick = fechaBDI;
@@ -192,3 +180,45 @@
     }
 
 })();
+
+// funcoes de auxilio copiadas
+function AtivarBarraDeAcaoDeUmItem() {
+    window.jQuery('.tr_item').mouseover(function() {
+        window.jQuery(this).find('.orc_barra_de_acao').fadeIn(0);
+    });
+    window.jQuery('.tr_item').mouseout(function() {
+        window.jQuery(this).find('.orc_barra_de_acao').fadeOut(0);
+    });
+};
+
+function DesativarBarraDeAcao() {
+    window.jQuery('.orc_barra_de_acao').each(function() {
+        window.jQuery(this).fadeOut(0);
+    });
+    window.jQuery('.tr_item').mouseover(function() {
+        window.jQuery(this).find('.orc_barra_de_acao').fadeOut(0);
+    });
+};
+
+function BdiDifirenciado(item) {
+    if (item.bdi_porcentagem || item.bdi_porcentagem === 0) {
+        return "<br>(BDI - " + (window.converteFloatMoeda(item.bdi_porcentagem)) + "%)";
+    } else {
+        return "";
+    }
+};
+
+/* cancela a inserção do BDI */
+function fechaBDI() {
+    // deleta todas as colunas referentes ao BDI
+    document.querySelectorAll("#table_orc_itens .mudaBDI").forEach((node) => node.remove())
+
+    // reabilita o botão
+    document.getElementById('modificaBDImassa').disabled = false
+
+    // rehabilita a barra de ações
+    AtivarBarraDeAcaoDeUmItem()
+
+    // apaga os inputs de BDIs diferenciados
+    document.getElementById("classesBDIs").remove()
+}
