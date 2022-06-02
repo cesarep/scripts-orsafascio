@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
-// @version      0.5
+// @version      0.5.1
 // @description  Permite modificação em massa dos BDIs no orçamento
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -14,10 +14,11 @@
 
 /**
  * Mudanças:
- * v0.5
+ * v0.5.1
  *  - Barra com botões de cancelar e salvar fixa na tela
  *  - Campos para alterar BDIs diferenciados de uma vez
  *  - Reorganização das funções no código
+ *  - Muda o cursor para carregando enquanto modifica
  */
 
 (function() {
@@ -127,6 +128,9 @@
         var promises = [];
         var itens = [];
 
+        // muda o cursor para carregando
+        document.body.style.cursor = 'wait';
+
         document.querySelectorAll("#table_orc_itens td.mudaBDI input.muda-bdi-item").forEach(
             (node) => {
                 // pega a linha
@@ -174,6 +178,8 @@
             console.log(erro.message)
         }).finally(()=>{
             alert("BDIs modificados")
+            // reseta cursor
+            document.body.style.cursor = '';
             fechaBDI();
         })
 
