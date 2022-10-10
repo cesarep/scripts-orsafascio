@@ -202,7 +202,7 @@ function leitorexcel(e) {
 
     itembdi.forEach(i => {
         if(i[0])
-            window.jQuery(`#table_orc_itens tbody tr[item='${i[0]}'] input`).val(parseFloat(i[i.length-1].replace(',', '.')))
+            window.jQuery(`#table_orc_itens tbody tr[item='${i[0].trim()}'] input`).val(parseFloat(i[i.length-1].replace(',', '.')))
     })
     alert("BDIs colados");
 }
