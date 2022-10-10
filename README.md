@@ -22,6 +22,10 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Alteração de BDI](imgs/scripts/alteracao-bdi.png)
 
+    Também permite copiar e colar uma lista de valores diretamente do excel. Filtrando na planilha apenas os itens com BDIs diferenciados, e copiando as colunas da itenização e de BDI filtradas para uma nova aba. Com o modo de modificar BDI habilidado, basta copiar a planilha e dar um Ctrl-V dentro do orça. 
+
+     ![Alteração de BDI - Importação Excel](imgs/scripts/alteracao-bdi-excel.png)
+
 - [Filtro de Exclusão em massa](https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-exclusao-massa.user.js)
 
     Adiciona campos para filtragem por código e descrição de Composições e Insumos na exclusão em massa.

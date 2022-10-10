@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
-// @version      0.5.1
+// @version      0.6
 // @description  Permite modificação em massa dos BDIs no orçamento
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -14,6 +14,9 @@
 
 /**
  * Mudanças:
+ * v0.6
+ *  - Permite copiar e colar dados do BDI diretamente do excel
+ *
  * v0.5.1
  *  - Barra com botões de cancelar e salvar fixa na tela
  *  - Campos para alterar BDIs diferenciados de uma vez
@@ -21,7 +24,7 @@
  *  - Muda o cursor para carregando enquanto modifica
  */
 
-(function() {
+ (function() {
     'use strict';
 
     // cria botão novo
@@ -105,7 +108,7 @@
 
         bdis.forEach(bdi => {
             let bdi_input = document.createElement('input')
-            bdi_input.className = ''
+            bdi_input.type = 'text'
             bdi_input.value = bdi
 
             // modifica todos os itens com esse BDI
@@ -117,8 +120,13 @@
             document.getElementById('classesBDIs').append(bdi_input)
         })
 
+        document.getElementById('classesBDIs').insertAdjacentHTML('beforeEnd', "<p>Permite copiar e colar dados do excel no formato (item, bdi)</p>")
+
         /* adiciona botões para salvar ou cancelar */
         document.querySelector("#table_orc_itens tbody").append(btn_td)
+
+        /* Prepara importação excel*/
+        document.addEventListener('paste', leitorexcel);
     }
 
     btn_c.onclick = fechaBDI;
@@ -187,6 +195,18 @@
 
 })();
 
+function leitorexcel(e) {
+    let clipdata = e.clipboardData || window.clipboardData;
+    let data = clipdata.getData('text/plain');
+    let itembdi = data.split('\n').map( v => v.split('\t'))
+
+    itembdi.forEach(i => {
+        if(i[0])
+            window.jQuery(`#table_orc_itens tbody tr[item='${i[0]}'] input`).val(parseFloat(i[i.length-1].replace(',', '.')))
+    })
+    alert("BDIs colados");
+}
+
 // funcoes de auxilio copiadas
 function AtivarBarraDeAcaoDeUmItem() {
     window.jQuery('.tr_item').mouseover(function() {
@@ -221,6 +241,9 @@ function fechaBDI() {
 
     // reabilita o botão
     document.getElementById('modificaBDImassa').disabled = false
+
+    /* Desativa importação excel*/
+    document.removeEventListener('paste', leitorexcel)
 
     // rehabilita a barra de ações
     AtivarBarraDeAcaoDeUmItem()
