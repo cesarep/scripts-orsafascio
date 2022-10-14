@@ -44,9 +44,9 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Selecionar todos os bancos](imgs/scripts/selecionar-bancos.png)
 
-- Titulos Informativos para [Orçamentos](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-orcs.user.js) e [Insumos e Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-comps-ins.user.js)
+- Titulos Informativos para [Orçamentos e Pastas](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-orcs.user.js) e [Insumos e Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-comps-ins.user.js)
 
-    Modifica o titulo na aba do navegador para incluir o código e descrição dos insumos, composições e orçamentos abertos, organizando melhor as abas.
+    Modifica o titulo na aba do navegador para incluir o código e descrição dos insumos, composições, orçamentos e pastas abertas, organizando melhor as abas.
 
     ![Titulos informativos](imgs/scripts/titulos-informativos.png)
 
