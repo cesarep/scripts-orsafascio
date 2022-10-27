@@ -28,7 +28,7 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
 - [Filtro de Exclusão em massa](https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-exclusao-massa.user.js)
 
-    Adiciona campos para filtragem por código e descrição de Composições e Insumos na exclusão em massa.
+    Adiciona campos para filtragem de Composições e Insumos na exclusão em massa.
 
     ![Exclusão em massa](imgs/scripts/filtro-exclusao.png)
 
