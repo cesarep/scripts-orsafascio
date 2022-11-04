@@ -8,6 +8,7 @@
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
 // @match        https://app.orcafascio.com/banco/emp/composicoes/importar
+// @match        https://app.orcafascio.com/banco/emp/composicoes/*
 // @icon         https://app.orcafascio.com/img/logo4.png
 // @run-at document-end
 // @grant        none
@@ -20,6 +21,7 @@
     if(url == '/banco/emp/composicoes/importar') location = "#wiz1step3 .widgetcontent";
     else if(url.endsWith('/set_bancos')) location = ".maincontent form";
     else if(url.startsWith('/orc/orcamentos/')) location = "#modal-editar-bancos .modal-body";
+    else if(url.startsWith('/banco/emp/composicoes/')) location = "#modal-bancos .modal-body";
 
     let btn = document.createElement("button");
     btn.id = "muda-bancos-copiar";
@@ -72,7 +74,7 @@
 })();
 
 function selecionar_bancos(data, parent) {
-    let basedata = data.split(/\r\n|\n/).map( v => v.split('\t'))
+    let basedata = data.split(/\r\n|\n/).map( v => v.split(/\t[']*/))
     console.log("Limpando seleção")
     document.querySelectorAll(parent + " .row-fluid input").forEach(n => {if(n.checked) n.click()})
     console.log("Selecionando", basedata)
