@@ -50,7 +50,7 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Copia e Colar Bancos](imgs/scripts/mudar-bancos.png)
 
-    A tabela deve estar com os nomes dos bancos e valores iguais aos presentes no site, conforme exemplo na tabela direita. O banco copiado pode ser colado no Excel, ele apresenta um apóstrofe (') na frente para evitar a auto-formatação das datas e números, como mostrado na tabela esquerda, cada valor precisa ser reeditado para aplicar a formatação de texto e esconder a apóstrofe (Dica: pressionar `F2` e `Enter`).
+    A tabela deve estar com os nomes dos bancos e valores iguais aos presentes no site, conforme exemplo na tabela direita. O banco copiado pode ser colado no Excel, ele apresenta um apóstrofe `'` na frente para evitar a auto-formatação das datas e números, como mostrado na tabela esquerda, cada valor precisa ser reeditado para aplicar a formatação de texto e esconder a apóstrofe (Dica: pressionar `F2` e `Enter`).
 
     ![Exemplos de tabela](imgs/scripts/mudar-bancos-2.png)
 
