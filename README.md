@@ -44,6 +44,16 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Selecionar todos os bancos](imgs/scripts/selecionar-bancos.png)
 
+- [Copia e Colar Bancos](https://github.com/cesarep/scripts-orsafascio/raw/main/mudar-bancos.user.js)
+
+    Adiciona botões para copiar e colar os bancos de maneira simplificada através de uma tabela do Excel nos menus de orçamentos e importação de composições.
+
+    ![Copia e Colar Bancos](imgs/scripts/mudar-bancos.png)
+
+    A tabela deve estar com os nomes dos bancos e valores iguais aos presentes no site, conforme exemplo na tabela direita. O banco copiado pode ser colado no Excel, ele apresenta um apóstrofe (') na frente para evitar a auto-formatação das datas e números, como mostrado na tabela esquerda, cada valor precisa ser reeditado para aplicar a formatação de texto e esconder a apóstrofe (Dica: pressionar `F2` e `Enter`).
+
+    ![Exemplos de tabela](imgs/scripts/mudar-bancos-2.png)
+
 - Titulos Informativos para [Orçamentos e Pastas](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-orcs.user.js) e [Insumos e Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/titulo-informativo-comps-ins.user.js)
 
     Modifica o titulo na aba do navegador para incluir o código e descrição dos insumos, composições, orçamentos e pastas abertas, organizando melhor as abas.
