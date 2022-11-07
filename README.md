@@ -73,3 +73,4 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
     Adiciona botões radio para fácilmente selecionar um único item para o relatório da curva ABC de Insumos.
 
     ![Itens na ABC de Insumos](imgs/scripts/itens-abc-insumos.png)
+    ![Itens na ABC de Insumos Marcado](imgs/scripts/itens-abc-insumos-2.png)
