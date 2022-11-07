@@ -38,6 +38,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Renumeração Automática](imgs/scripts/renumeracao-automatica.png)
 
+- [Exclusão de etapas vazias](https://github.com/cesarep/scripts-orsafascio/raw/main/excluir-etapas-vazias.user.js)
+
+    Adiciona botão na página para selecionar as etapas vazias para exclusão.
+
+    ![Excluir etapas vazias](imgs/scripts/excluir-etapas-vazias.png)
+
 - [Selecionar todos os bancos](https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-todos-bancos.user.js)
 
     Adiciona opção na exportação do **relatório de composições analíticas com preço unitário** para selecionar todos os bancos exceto o próprio, gerando relatório só com as composições próprias.
