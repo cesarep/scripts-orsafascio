@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js
-// @version      0.6
+// @version      0.7
 // @description  Permite modificação em massa dos BDIs no orçamento
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -14,6 +14,9 @@
 
 /**
  * Mudanças:
+ * v0.7
+ *  - Corrigido itens com bdi "undefined"
+ * 
  * v0.6
  *  - Permite copiar e colar dados do BDI diretamente do excel
  *
@@ -95,7 +98,7 @@
 
 
         // preenche inputs com valores preexistentes
-        document.querySelectorAll("#table_orc_itens tbody tr:not([classe='etapa']):not([bdi_porcentagem='null']) td:nth-child(4) input").forEach(
+        document.querySelectorAll("#table_orc_itens tbody tr:not([classe='etapa']):not([bdi_porcentagem='null']):not([bdi_porcentagem='undefined']) td:nth-child(4) input").forEach(
             (node) => {node.setAttribute('value', node.parentElement.parentElement.getAttribute('bdi_porcentagem'))}
         )
 
@@ -201,8 +204,10 @@ function leitorexcel(e) {
     let itembdi = data.split('\n').map( v => v.split('\t'))
 
     itembdi.forEach(i => {
-        if(i[0])
+        if(i[0]){
             window.jQuery(`#table_orc_itens tbody tr[item='${i[0].trim()}'] input`).val(parseFloat(i[i.length-1].replace(',', '.')))
+            document.querySelector(`#table_orc_itens tbody tr[item='${i[0].trim()}'] input`).style.backgroundColor="yellow"
+        }
     })
     alert("BDIs colados");
 }
