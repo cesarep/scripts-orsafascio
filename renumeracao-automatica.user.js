@@ -3,14 +3,20 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
-// @version      0.1
+// @version      0.2
 // @description  Renumera automaticamente os itens
 // @author       César E. Petersen
-// @match        https://app.orcafascio.com/orc/orcamentos/edit_todos?id=*
+// @match        https://app.orcafascio.com/orc/orcamentos/edit_todos?id=*&item=true
 // @icon         https://app.orcafascio.com/img/logo4.png
 // @run-at document-end
 // @grant    GM_addStyle
 // ==/UserScript==
+
+/**
+ * Mudanças:
+ * v0.2
+ *  - Corrigido URL para só aparecer na edição de itens
+ */
 
 GM_addStyle ( `
     .input-xsmall {
