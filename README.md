@@ -18,13 +18,13 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
 - [Alteração de BDI em massa](https://github.com/cesarep/scripts-orsafascio/raw/main/alterar-BDI-massa.user.js)
     
-    Adiciona botão para alterar vários BDIs diferenciados ao mesmo tempo.
+    Orçafascio agora inclui página para alteração dos BDIs diferenciados, funcionalidades antigas foram movidas para lá:
+
+    ![Alteração de BDI](imgs/scripts/alteracao-bdi-novo.png)
+
+    Inclui campos para substituir todos os BDIs diferentes ao mesmo tempo e funções para copiar e colar a relação dos itens e BDIs
 
     ![Alteração de BDI](imgs/scripts/alteracao-bdi.png)
-
-    Também permite copiar e colar uma lista de valores diretamente do excel. Filtrando na planilha apenas os itens com BDIs diferenciados, e copiando as colunas da itenização e de BDI filtradas para uma nova aba. Com o modo de modificar BDI habilidado, basta copiar a planilha e dar um Ctrl-V dentro do orça. 
-
-     ![Alteração de BDI - Importação Excel](imgs/scripts/alteracao-bdi-excel.png)
 
 - [Filtro de Exclusão em massa](https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-exclusao-massa.user.js)
 
