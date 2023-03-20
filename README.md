@@ -22,7 +22,7 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Alteração de BDI](imgs/scripts/alteracao-bdi-novo.png)
 
-    Inclui campos para substituir todos os BDIs diferentes ao mesmo tempo e funções para copiar e colar a relação dos itens e BDIs
+    Inclui campos para substituir todos os BDIs diferentes ao mesmo tempo e funções para copiar e colar planilha compatível Excel com a relação de itens e BDIs.
 
     ![Alteração de BDI](imgs/scripts/alteracao-bdi.png)
 
