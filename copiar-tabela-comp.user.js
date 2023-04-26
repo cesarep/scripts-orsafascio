@@ -7,6 +7,7 @@
 // @description  Adiciona botão nas tabelas de composições para facilmente copia-las para o excel
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/banco/*/composicoes/*
+// @match        https://app.orcafascio.com/orc/orcamentos/*/composicoes/*
 // @icon         https://app.orcafascio.com/img/logo4.png
 // @grant        none
 // ==/UserScript==
