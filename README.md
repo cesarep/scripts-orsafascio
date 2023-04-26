@@ -87,6 +87,6 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     Adiciona botão no topo das tabelas de composições para facilmente copia-las para o Excel.
 
-    ![Botão de copia da tabela](imgs/scripts/copiar-tabela-comp.png.png)
-    ![tabela copiada no excel](imgs/scripts/copiar-tabela-comp-excel.png.png)
+    ![Botão de copia da tabela](imgs/scripts/copiar-tabela-comp.png)
+    ![tabela copiada no excel](imgs/scripts/copiar-tabela-comp-excel.png)
 
