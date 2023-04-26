@@ -66,10 +66,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Titulos informativos](imgs/scripts/titulos-informativos.png)
 
-- [Mover pastas](https://github.com/cesarep/scripts-orsafascio/raw/main/mover-pastas.user.js)
+- [~~Mover pastas~~](https://github.com/cesarep/scripts-orsafascio/raw/main/mover-pastas.user.js)
 
-    Adiciona botão para mover pastas inteiras nos orçamentos.
-    Os botões demoram para aparecer pois precisam carregar toda a estrutura do diretório de pastas antes.
+    
+    ~~Adiciona botão para mover pastas inteiras nos orçamentos.
+    Os botões demoram para aparecer pois precisam carregar toda a estrutura do diretório de pastas antes.~~
+    O script não está funcionando no momento.
 
     ![Botão para mover pastas](imgs/scripts/mover-pasta-1.png)
     ![Janela para mover pastas](imgs/scripts/mover-pasta-2.png)
@@ -80,3 +82,11 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Itens na ABC de Insumos](imgs/scripts/itens-abc-insumos.png)
     ![Itens na ABC de Insumos Marcado](imgs/scripts/itens-abc-insumos-2.png)
+
+- [Selecionar Itens na ABC de Insumos](https://github.com/cesarep/scripts-orsafascio/raw/main/copiar-tabela-comp.user.js)
+
+    Adiciona botão no topo das tabelas de composições para facilmente copia-las para o Excel.
+
+    ![Botão de copia da tabela](imgs/scripts/copiar-tabela-comp.png.png)
+    ![tabela copiada no excel](imgs/scripts/copiar-tabela-comp-excel.png.png)
+
