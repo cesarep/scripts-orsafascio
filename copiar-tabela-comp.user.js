@@ -28,6 +28,7 @@
             // copia com estilo
             let range = document.createRange();
             range.selectNode(th.parentNode.parentNode.parentNode);
+            document.getSelection().removeAllRanges();
             window.getSelection().addRange(range);
             document.execCommand('copy');
 
