@@ -1,5 +1,4 @@
 Attribute VB_Name = "modulo_orcafascio"
-
 Sub limpar_abc_insumos()
 '
 ' limpar_abc_insumos Macro
