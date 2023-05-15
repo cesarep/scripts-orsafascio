@@ -83,7 +83,7 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
     ![Itens na ABC de Insumos](imgs/scripts/itens-abc-insumos.png)
     ![Itens na ABC de Insumos Marcado](imgs/scripts/itens-abc-insumos-2.png)
 
-- [Selecionar Itens na ABC de Insumos](https://github.com/cesarep/scripts-orsafascio/raw/main/copiar-tabela-comp.user.js)
+- [Copiar Tabela de Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/copiar-tabela-comp.user.js)
 
     Adiciona botão no topo das tabelas de composições para facilmente copia-las para o Excel.
 
