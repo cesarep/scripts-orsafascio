@@ -34,9 +34,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
 - [Renumeração Automatica](https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js)
 
-    Adiciona botão na página para renumerar automaticamente todos os itens de orçamento. Itens alterados ficam amarelos e exibem mensagem com valor antigo ao passar o mouse por cima.
+    Adiciona botão na página para renumerar automaticamente todos os itens de orçamento. 
+    Também um checkbox para o modo de renumeração dos subitens das etapas, essa renumeração é feita com base nos valores salvos originais, portanto, deve-se salvar os valores após a renumeração automatica, caso seja utilizada.
+    Itens alterados ficam amarelos e exibem mensagem com valor antigo ao passar o mouse por cima.
 
-    ![Renumeração Automática](imgs/scripts/renumeracao-automatica.png)
+    ![Renumeração Automática](imgs/scripts/renumeracao-automatica-1.png)
+    ![Renumeração Automática](imgs/scripts/renumeracao-automatica-2.png)
 
 - [Exclusão de etapas vazias](https://github.com/cesarep/scripts-orsafascio/raw/main/excluir-etapas-vazias.user.js)
 

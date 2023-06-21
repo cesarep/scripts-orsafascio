@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js
-// @version      0.3
+// @version      0.4
 // @description  Renumera automaticamente os itens
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -14,6 +14,9 @@
 
 /**
  * Mudanças:
+ * v0.4
+ *  - Adicionado checkbox para modificar os subitens de uma etapa com numeraçao atualizada
+ *
  * v0.3
  *  - Adicionado Botão para editar numeração removido dos orçamentos
  *
@@ -34,18 +37,41 @@ GM_addStyle ( `
     let url = window.location.pathname;
     // se esta no modo de edição de items:
     if(url.startsWith('/orc/orcamentos/edit_todos') && window.location.search.endsWith('&item=true')) {
-        var btn = document.createElement("button");
-        btn.className="btn btn-warning";
-        btn.id="renumeraitens";
-        btn.style="float: left;";
-        btn.type="button";
-        btn.innerHTML = "Renumerar Itens Automaticamente";
+        var html = `
+        <div style='float: left;'>
+          <button class="btn btn-warning" id="renumeraitens" type="button">Renumerar Itens Automaticamente</button>
+          <span style="vertical-align: text-bottom;">
+             <input type="checkbox" style="vertical-align: sub;" id="renumeraetapa">
+             <label style="display: inline-block;" for="renumeraetapa">Modificar itens das etapas</span>
+          </span>
+        </div>`
 
-        document.querySelector("#table_orc_itens tbody tr:first-child td:first-child").appendChild(btn)
+        document.querySelector("#table_orc_itens tbody tr:first-child td:first-child").insertAdjacentHTML('afterbegin',html)
+
+        var btn = document.querySelector("#renumeraitens")
+        var chk = document.querySelector("#renumeraetapa")
 
         function nivel(value) {
             return (value.match(/\./g)||[]).length+1;
         }
+
+        // aplica evento em todos os inputs de etapas
+        Array.from(document.querySelectorAll("#table_orc_itens input[type=text][name^=etapa]")).map(etapa => {
+            etapa.oninput = () => {
+                // se o checkbox de renumerar etapas esta marcado
+                if(chk.checked){
+                    // valor original
+                    let valor_antigo = etapa.defaultValue
+                    // seleciona todos os itens cujo valor original comece com o valor original do input da etapa
+                    Array.from(document.querySelectorAll("#table_orc_itens input[type=text][value^='"+valor_antigo+".']")).map(item => {
+                        // corrige valor para nova etapa
+                        item.value = etapa.value + item.defaultValue.slice(valor_antigo.length);
+                        item.style.backgroundColor="yellow";
+                        item.title = "Valor antigo: " + item.defaultValue;
+                    })
+                }
+            }
+        });
 
         btn.onclick = () => Array.from(document.querySelectorAll("#table_orc_itens input[type=text]")).reduce(
             (acc, node, idx) => {
@@ -85,6 +111,7 @@ GM_addStyle ( `
 
                 return { N: nivel(node.value), v: node.value};
             }, { N: 1, v: "0"});
+
     } else if(!url.startsWith('/orc/orcamentos/edit_todos')) { // se está na pagina do orçamento
         let ultimo_li = document.querySelector('li a[href^="/orc/orcamentos/edit_todos"]').parentElement;
         let link_novo = document.createElement('li')
