@@ -12,7 +12,7 @@ Sub limpar_abc_insumos()
     Columns("H:H").Delete
 ' limpa colunas valor total produtivo e Improdutivo
     Columns("I:J").Delete
-' limpa linha em branco de cabeçalho
+' limpa linha em branco de cabe?alho
     Rows("5:5").Delete Shift:=xlUp
     Rows("4:4").EntireRow.AutoFit
     Rows("4:4").HorizontalAlignment = xlCenter
@@ -37,12 +37,16 @@ Sub limpar_abc_insumos()
     Range("G5:H" & lin_fim + 1).NumberFormat = "0.00"
 
 ' define formulas das colunas
+' colunas Total
+    With Range("H5")
+        .Formula = "=ROUND(F5*G5, 2)"
+        .AutoFill Destination:=Range("H5:H" & lin_fim)
+    End With
 ' colunas Peso
     With Range("I5")
         .Formula = "=H5/$H$" & (lin_fim + 1)
         .NumberFormat = "0.00%"
         .AutoFill Destination:=Range("I5:I" & lin_fim)
-        
     End With
 ' colunas Valor Acumulado
     With Range("J5")
@@ -56,7 +60,7 @@ Sub limpar_abc_insumos()
         .AutoFill Destination:=Range("K5:K" & lin_fim)
     End With
     
-' formatação condicional ABC 80%/95%
+' formata??o condicional ABC 80%/95%
     With Range("A5:K" & lin_fim).FormatConditions
         .Add Type:=xlExpression, Formula1:="=$K5<=0,80"
         .Add Type:=xlExpression, Formula1:="=$K5<=0,95"
@@ -84,9 +88,13 @@ Sub limpar_orc_sintetico()
 ' limpar_orc_sintetico Macro
 '
 
-' primeiro detecta se é orçamento com equipamento
+' primeiro detecta se ? or?amento com equipamento
     Dim equip As Boolean
     equip = Range("i5").Value2 = "EQ."
+        
+' limpa campo BDI e
+    Range("H1:J2").ClearContents
+    Range("E2:J2").MergeCells = True
 
 ' deleta col totais e linha
     If equip = True Then
@@ -95,7 +103,6 @@ Sub limpar_orc_sintetico()
         Columns("J:J").Delete
     End If
     
-    Rows(2).EntireRow.AutoFit
     With Rows(3)
         .MergeCells = False
         .WrapText = False
@@ -130,14 +137,16 @@ Sub limpar_orc_sintetico()
             .Value = "BDIs Diferenciados"
             .HorizontalAlignment = xlCenter
         End With
+        
         Range("K2").Value = "TERC"
         Range("L2").Value = "M.O."
         Range("M2").Value = "EQ."
         Range("N2").Value = "MAT."
+        Range("K2:N2").VerticalAlignment = xlBottom
     
         Range("K3").Value = "50%"
         Range("L3").Value = "35%"
-        Range("M3").Value = "20%"
+        Range("M3").Value = "50%"
         Range("N3").Value = "20%"
     Else
         With Range("J1:L1")
@@ -148,6 +157,7 @@ Sub limpar_orc_sintetico()
         Range("J2").Value = "TERC"
         Range("K2").Value = "M.O."
         Range("L2").Value = "MAT."
+        Range("J2:L2").VerticalAlignment = xlBottom
     
         Range("J3").Value = "50%"
         Range("K3").Value = "35%"
@@ -218,13 +228,13 @@ Sub limpar_orc_sintetico()
                 ' estiliza
                 With Range(row.Cells(7), row.Cells(9))
                     .HorizontalAlignment = xlRight
-                    .NumberFormat = "0.00"
+                    .NumberFormat = "#,##0.00"
                 End With
                 
             ' se linha de item
             Else
                 ' unitario MO
-                row.Cells(5).Formula = "=TRUNC(H" & lin & " * (1+IF(ISBLANK(H" & lin & "),$J$3,$H$3)), 2)"
+                row.Cells(5).Formula = "=TRUNC(H" & lin & " * (1+IF(ISBLANK(J" & lin & "),$K$3,$J$3)), 2)"
                 ' unitario MAT
                 row.Cells(6).Formula = "=TRUNC(I" & lin & " * (1+$L$3), 2)"
                 
@@ -249,7 +259,7 @@ Sub limpar_orc_sintetico()
     End With
     
     
-' fixa linha cabeçalho
+' fixa linha cabe?alho
     Application.Goto Reference:=Range("A1"), Scroll:=True
     Range("A6").Activate
     ActiveWindow.FreezePanes = True
