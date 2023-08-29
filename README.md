@@ -32,6 +32,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Exclusão em massa](imgs/scripts/filtro-exclusao.png)
 
+- [Filtro de Edição de Preços](https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-edicao-precos.user.js)
+
+    Adiciona campos para filtragem de insumos na edição dos valores unitários
+
+    ![Exclusão em massa](imgs/scripts/filtro-precos.png)
+
 - [Renumeração Automatica](https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js)
 
     Adiciona botão na página para renumerar automaticamente todos os itens de orçamento. 
