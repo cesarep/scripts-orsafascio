@@ -75,16 +75,6 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Titulos informativos](imgs/scripts/titulos-informativos.png)
 
-- [~~Mover pastas~~](https://github.com/cesarep/scripts-orsafascio/raw/main/mover-pastas.user.js)
-
-    
-    ~~Adiciona botão para mover pastas inteiras nos orçamentos.
-    Os botões demoram para aparecer pois precisam carregar toda a estrutura do diretório de pastas antes.~~
-    O script não está funcionando no momento.
-
-    ![Botão para mover pastas](imgs/scripts/mover-pasta-1.png)
-    ![Janela para mover pastas](imgs/scripts/mover-pasta-2.png)
-
 - [Selecionar Itens na ABC de Insumos](https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-itens-abc-insumos.user.js)
 
     Adiciona botões radio para fácilmente selecionar um único item para o relatório da curva ABC de Insumos.
