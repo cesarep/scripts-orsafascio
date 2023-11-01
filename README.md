@@ -38,6 +38,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Exclusão em massa](imgs/scripts/filtro-precos.png)
 
+- [Filtro de Composicoes](https://github.com/cesarep/scripts-orsafascio/raw/main/filtro-comps-orcamento.user.js)
+
+    Adiciona campos para filtragem de composições na listagem de composições do orçamento
+
+    ![Filtragem de Composição](imgs/scripts/filtro-comps.png)
+
 - [Renumeração Automatica](https://github.com/cesarep/scripts-orsafascio/raw/main/renumeracao-automatica.user.js)
 
     Adiciona botão na página para renumerar automaticamente todos os itens de orçamento. 
