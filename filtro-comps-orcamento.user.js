@@ -37,12 +37,18 @@
     inp_t.placeholder = "Filtrar tipo"
     th.childNodes[3].appendChild(inp_t);
 
+    let inp_u = document.createElement("input")
+    inp_u.className ='input-block-level'
+    inp_u.id = "filtra-un"
+    inp_u.placeholder = "Filtrar unidade"
+    th.childNodes[4].appendChild(inp_u);
+
     // define atributos em todas as linhas para permitir a pesquisa
     document.querySelectorAll(".maincontent .table tr.success").forEach( (tr) =>{
         tr.setAttribute("cod", tr.childNodes[0].innerText)
-        tr.setAttribute("desc", tr.childNodes[2].firstChild.value)
-        tr.setAttribute("tipo", tr.childNodes[3].innerText)
         tr.setAttribute("desc", tr.childNodes[2].innerText)
+        tr.setAttribute("tipo", tr.childNodes[3].innerText)
+        tr.setAttribute("un", tr.childNodes[4].innerText)
     })
 
     // debounce para performance
@@ -58,9 +64,10 @@
     inp_c.oninput = debounce(filtrar, 500)
     inp_d.oninput = debounce(filtrar, 500)
     inp_t.oninput = debounce(filtrar, 500)
+    inp_u.oninput = debounce(filtrar, 500)
 
     function filtrar() {
-        let cod = inp_c.value, desc = inp_d.value, tipo = inp_t.value;
+        let cod = inp_c.value, desc = inp_d.value, tipo = inp_t.value, unidade = inp_u.value;
 
         let querybase = ".maincontent .table tr:not(:nth-child(1))"
         let hidequery = []
@@ -68,6 +75,7 @@
         if(cod.length) hidequery.push(`[cod*='${cod}' i]`)
         if(desc.length) hidequery.push(`[desc*='${desc}' i]`)
         if(tipo.length) hidequery.push(`[tipo*='${tipo}' i]`)
+        if(unidade.length) hidequery.push(`[un*='${unidade}' i]`)
 
         console.log(querybase + hidequery.join(""))
         console.log(hidequery.map(q => `${querybase}:not(${q})`).join(", "))
