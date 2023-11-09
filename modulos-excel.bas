@@ -257,9 +257,17 @@ Sub limpar_orc_sintetico()
         .NumberFormat = "#,##0.00"
         .RowHeight = 20
     End With
-    
-    
-' fixa linha cabe?alho
+
+' Agrupar itens
+    ActiveWindow.DisplayOutline = True
+    ActiveSheet.Outline.SummaryRow = xlAbove
+    Dim nivel As Integer
+    For Each row In Range("A6:A" & lin_fim).Rows
+        nivel = UBound(Split(row.Cells(1).Value, "."))
+        row.Rows.OutlineLevel = nivel + 1
+    Next row
+
+' fixa linha cabeçalho
     Application.Goto Reference:=Range("A1"), Scroll:=True
     Range("A6").Activate
     ActiveWindow.FreezePanes = True
