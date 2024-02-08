@@ -3,7 +3,7 @@
 // @namespace    https://app.orcafascio.com/
 // @updateURL    https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-itens-abc-insumos.user.js
 // @downloadURL  https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-itens-abc-insumos.user.js
-// @version      0.1
+// @version      0.2
 // @description  Permite selecionar apenas um item no relatório da curva ABC de insumos
 // @author       César E. Petersen
 // @match        https://app.orcafascio.com/orc/orcamentos/*
@@ -11,6 +11,13 @@
 // @run-at document-end
 // @grant        none
 // ==/UserScript==
+
+/**
+ * Mudanças:
+ *
+ * v0.2
+ *  - Incluso botão para comparação de preços da base na tela principal do orçamento
+ */
 
 (function() {
     'use strict';
@@ -49,5 +56,18 @@
     })
 
     document.querySelector("#modal-relatorios-abc_insumos .modal-body h4").insertAdjacentElement('afterend', selTodoslb)
+
+    // botão para comparação de preços da base
+    let cpbaselb = document.createElement("label");
+    cpbaselb.htmlFor="precos_da_base";
+    let cpbase = document.createElement("input");
+    cpbase.id="precos_da_base";
+    cpbase.name="precos_da_base"
+    cpbase.type="checkbox";
+    cpbase.checked=true;
+    cpbaselb.appendChild(cpbase)
+    cpbaselb.append(" Com comparação de preços da base");
+
+    document.querySelector("#modal-relatorios-abc_insumos .modal-body").insertAdjacentElement('afterbegin', cpbaselb)
 
 })();
