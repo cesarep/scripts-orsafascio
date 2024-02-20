@@ -81,6 +81,12 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
     ![Titulos informativos](imgs/scripts/titulos-informativos.png)
 
+- [Tabela Fixa](https://github.com/cesarep/scripts-orsafascio/raw/main/tabela-fixa.user.js)
+
+    Fixa a linha superior da tabela de orçamento.
+
+    ![Tabela Fixa](imgs/scripts/tabela-fixa.png)
+
 - [Selecionar Itens na ABC de Insumos](https://github.com/cesarep/scripts-orsafascio/raw/main/selecionar-itens-abc-insumos.user.js)
 
     Adiciona botões radio para fácilmente selecionar um único item para o relatório da curva ABC de Insumos, e botão para incluir comparação com preços da base, anteriormente só disponível por dentro do menu de insumos.
