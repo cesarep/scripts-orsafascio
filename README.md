@@ -101,3 +101,9 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
     ![Botão de copia da tabela](imgs/scripts/copiar-tabela-comp.png)
     ![tabela copiada no excel](imgs/scripts/copiar-tabela-comp-excel.png)
 
+- [Substituição de Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/subst-comp.user.js)
+
+    Adiciona opção de salvar e gerenciar lista de substituições de composições para aplicação simultânea. Pode ser necessário aplicar mais de uma vez para trocar todas as composições.
+
+    ![Lista de substiuções salvas](imgs/scripts/subst-comp-1.png)
+    ![Botão para salvar substituição](imgs/scripts/subst-comp-2.png)
