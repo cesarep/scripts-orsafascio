@@ -103,7 +103,8 @@ Conjunto de _userscripts_ para facilitar utilização do Orçafascio.
 
 - [Substituição de Composições](https://github.com/cesarep/scripts-orsafascio/raw/main/subst-comp.user.js)
 
-    Adiciona opção de salvar e gerenciar lista de substituições de composições para aplicação simultânea. Pode ser necessário aplicar mais de uma vez para trocar todas as composições.
+    Adiciona opção de salvar e gerenciar lista de substituições de composições para aplicação simultânea. Pode ser necessário aplicar mais de uma vez para trocar todas as composições. 
+    A lista de substituições é salva localmente no navegador e pode ser removida ao se apagar os dados de navegação. É possivel fazer backup e restaurar ou compartilhar a lista com os botões de backup e upload de arquivo. A importação não elimina as substituições existentes, apenas acrescenta e substitui as referentes ao mesmo código. Apenas as composições presentes no orçamento dentre as existentes na lista são exibidas.
 
     ![Lista de substiuções salvas](imgs/scripts/subst-comp-1.png)
     ![Botão para salvar substituição](imgs/scripts/subst-comp-2.png)
